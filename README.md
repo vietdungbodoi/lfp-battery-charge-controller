@@ -1,11 +1,11 @@
 # LFP Battery Charge Controller (RTL Design & Verification)
 
-## Tổng quan dự án (Overview)
-Kho lưu trữ này chứa mã nguồn thiết kế phần cứng RTL và hệ thống kiểm chứng (Verification) cho bộ điều khiển sạc pin Lithium Iron Phosphate (LiFePO4 / LFP) thông minh. Hệ thống được xây dựng dựa trên máy trạng thái hữu hạn (Finite State Machine - FSM) sử dụng ngôn ngữ **Verilog HDL**, kết hợp môi trường Testbench chuyên sâu để kiểm chứng bằng công cụ **Icarus Verilog**.
+## Tổng quan dự án 
+Kho lưu trữ này chứa mã nguồn thiết kế phần cứng RTL và hệ thống kiểm chứng (Verification) cho bộ điều khiển sạc pin Lithium Iron Phosphate (LiFePO4 / LFP) thông minh. Hệ thống được xây dựng dựa trên máy trạng thái hữu hạn FSM sử dụng ngôn ngữ Verilog, kết hợp môi trường Testbench chuyên sâu để kiểm chứng bằng công cụ Icarus Verilog.
 
 Dự án mô phỏng quá trình sạc an toàn cho pin LFP, bao gồm việc quản lý các giai đoạn dòng điện không đổi (CC), điện áp không đổi (CV), trạng thái đầy và cơ chế ngắt khẩn cấp khi phát hiện lỗi quá nhiệt phần cứng.
 
-## Cấu trúc thư mục (Directory Structure)
+## Cấu trúc thư mục 
 ```text
 lfp-battery-charge-controller/
 │
@@ -19,7 +19,7 @@ lfp-battery-charge-controller/
 └── README.md
 ```
 
-## Kiến trúc Máy trạng thái FSM (FSM Architecture)
+## Kiến trúc Máy trạng thái FSM 
 Bộ điều khiển hoạt động đồng bộ theo sườn dương xung nhịp (`clk`) và tích hợp tín hiệu khởi động lại phần cứng (`rst`). Chu trình sạc được phân chia thành 5 trạng thái:
 
 1. **IDLE (Trạng thái chờ - State 0):** Trạng thái mặc định khi khởi động. Hệ thống chờ tín hiệu kết nối từ bộ sạc (`charger_plugged = 1`).
@@ -28,14 +28,14 @@ Bộ điều khiển hoạt động đồng bộ theo sườn dương xung nhị
 4. **FULL (Sạc đầy - State 3):** Kích hoạt khi pin đạt dung lượng tối đa ($V_{batt} = 255$), hệ thống tự động ngắt dòng sạc hoàn toàn để bảo vệ tuổi thọ cell pin.
 5. **FAULT (Bảo vệ lỗi - State 4):** Trạng thái ngoại lệ có mức ưu tiên cao nhất. Ngay khi cảm biến ghi nhận quá nhiệt (`temp_high = 1`), mạch lập tức ngắt lệnh sạc (`charge_en = 0`) và kích hoạt cờ cảnh báo lỗi (`alert_led = 1`).
 
-## Mô phỏng và Kiểm chứng (Simulation & Verification)
+## Mô phỏng và Kiểm chứng 
 Hệ thống kiểm chứng sử dụng kịch bản testbench tự động quét các mốc điện áp và giả lập tình huống quá nhiệt đột ngột để đo lường thời gian đáp ứng của FSM phần cứng.
 
-### Yêu cầu công cụ (Prerequisites)
+### Yêu cầu công cụ 
 *   Icarus Verilog (`iverilog`)
 *   Trình xem sóng: WaveTrace 
 
-### Hướng dẫn chạy mô phỏng (Build & Run)
+### Hướng dẫn chạy mô phỏng 
 Thực thi các lệnh sau tại thư mục gốc của dự án trên Terminal:
 
 1. Biên dịch mã nguồn RTL và Testbench:
