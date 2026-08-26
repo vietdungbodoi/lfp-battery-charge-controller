@@ -1,0 +1,197 @@
+$date
+	Wed Aug 26 21:14:24 2026
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_charge_controller $end
+$var wire 1 ! charge_en $end
+$var wire 1 " alert_led $end
+$var reg 1 # charger_plugged $end
+$var reg 1 $ clk $end
+$var reg 1 % rst $end
+$var reg 1 & temp_high $end
+$var reg 8 ' v_batt [7:0] $end
+$scope module uut $end
+$var wire 1 # charger_plugged $end
+$var wire 1 $ clk $end
+$var wire 1 % rst $end
+$var wire 1 & temp_high $end
+$var wire 8 ( v_batt [7:0] $end
+$var parameter 3 ) CC_MODE $end
+$var parameter 3 * CV_MODE $end
+$var parameter 3 + FAULT $end
+$var parameter 3 , FULL $end
+$var parameter 3 - IDLE $end
+$var reg 1 " alert_led $end
+$var reg 1 ! charge_en $end
+$var reg 3 . current_state [2:0] $end
+$var reg 3 / next_state [2:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b0 -
+b11 ,
+b100 +
+b10 *
+b1 )
+$end
+#0
+$dumpvars
+b0 /
+b0 .
+b0 (
+b0 '
+0&
+1%
+0$
+0#
+0"
+0!
+$end
+#5000
+1$
+#10000
+0$
+#15000
+1$
+0%
+#20000
+0$
+#25000
+1!
+b1 .
+b1 /
+1$
+b1100100 '
+b1100100 (
+1#
+#30000
+0$
+#35000
+1$
+#40000
+0$
+#45000
+1$
+#50000
+0$
+#55000
+b10 .
+b10 /
+1!
+1$
+b11010010 '
+b11010010 (
+#60000
+0$
+#65000
+1$
+#70000
+0$
+#75000
+1$
+#80000
+0$
+#85000
+b11 .
+b11 /
+0!
+1$
+b11111111 '
+b11111111 (
+#90000
+0$
+#95000
+1$
+#100000
+0$
+#105000
+b0 .
+b0 /
+1$
+0#
+#110000
+0$
+#115000
+1$
+#120000
+0$
+#125000
+1$
+#130000
+0$
+#135000
+1!
+b1 .
+b1 /
+1$
+b10010110 '
+b10010110 (
+1#
+#140000
+0$
+#145000
+1$
+#150000
+0$
+#155000
+b100 .
+b100 /
+0!
+1$
+1&
+#160000
+0$
+#165000
+1$
+#170000
+0$
+#175000
+1$
+#180000
+0$
+#185000
+1$
+0#
+#190000
+0$
+#195000
+1$
+#200000
+0$
+#205000
+1$
+#210000
+0$
+#215000
+b0 .
+b0 /
+0"
+1$
+0&
+#220000
+0$
+#225000
+1$
+#230000
+0$
+#235000
+1$
+#240000
+0$
+#245000
+1$
+#250000
+0$
+#255000
+1$
+#260000
+0$
+#265000
+1$
