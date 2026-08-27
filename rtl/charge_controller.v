@@ -30,6 +30,8 @@ module charge_controller (
 
         if(temp_high) begin
             next_state = FAULT;
+            alert_led = 1'b1;
+            charge_en = 1'b0;
         end else begin
             case(current_state)
                 IDLE: begin
